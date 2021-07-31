@@ -4,13 +4,20 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #fce138;
+    --secondry-color: #024e76;
+    --tertiary-color: #39a6b2;
+}
+
 body {
     /* more on the crazy alphanumerical value in a minute! */
-    color: #39a6b2;
+    color: var(--ter)
     font-family: Helvetica, Arial, sans-serif;
 }
 /*Applies 20px to every side (top, right, bottom, left) */
 header {
+    z-index: 9999;
     background-attachment: fixed;
     background-position: 80%;
     position: -webkit-sticky;
@@ -20,7 +27,7 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 20px 35px;
-    background-color: #39a6b2;
+    background-color: var(--tertiary-color);
     background-image: url("C:/Users/bradf/Desktop/projects/run-buddy/assets/images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
@@ -29,13 +36,13 @@ header h1 {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     font-weight: bold;
     font-size: 36px;
-    color: #fce138;
+    color: var(--primary-color);
     margin: 0;
     }
 
 header a {
     text-decoration: none;
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 
@@ -59,7 +66,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    background: #fce138;
+    background: var(--primary-color);
     color: #024e76;
     border-radius: 15px;
     text-shadow: none;
@@ -69,13 +76,13 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background: #fce138;
+    background: var(--primary-color);
     width: 100%;
     padding: 40px 35px
 }
 
 footer h2 {
-    color: #024e76;
+    color: var(--secondry-color);
     font-size: 30px;
     margin: 0;
 }
@@ -86,7 +93,7 @@ footer div {
 }
 
 footer a {
-    color: #024e76;
+    color: var(--secondry-color);
 }
 
 /* Hero Style Start */
@@ -115,7 +122,7 @@ footer a {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     font-style: italic;
     font-size: 55px;
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 .hero-form {
@@ -160,7 +167,7 @@ footer a {
 }
 .hero-form button {
     border-radius: 15px;
-    color: #fce138;
+    color: var(--primary-color);
     background-color: #024e76;
     border: none;
     padding: 10px 20px;
@@ -168,7 +175,67 @@ footer a {
 }
 
 .hero-form button:hover {
-    background-color: #39a6b2;
+    background-color: var(--tertiary-color);
+}
+
+.checkbox-wrapper input, .radio-wrapper input {
+    opacity: 0;
+}
+
+.checkbox-wrapper label, .radio-wrapper label {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #024e76;
+    position: absolute;
+    top: -4px;
+    left: -30px;
+}
+
+.radio-wrapper label::before {
+    border-radius: 50%
+}
+
+.radio-wrapper label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #024e76;
+    position: absolute;
+    left: -29px;
+    top: -3px;
+    background-image: radial-gradient(circle, var(--tertiary-color), #024e76);
+}
+
+.checkbox-wrapper label::after {
+    content: "";
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid #024e76;
+    border-bottom: 2px solid #024e76;
+    position: absolute;
+    left: -26px;
+    top:1px;
+    transform: rotate(-58deg);
+}
+
+.checkbox-wrapper input + label::after,
+.radio-wrapper input + label::after {
+    content: none;
+}
+
+.checkbox-wrapper input:checked + label::after,
+.radio-wrapper input:checked + label::after {
+    content: "";
 }
 /* Hero Style End */
 
@@ -183,7 +250,7 @@ section{
     margin-bottom: 35px;
     padding: 0 100px 20px 100px;
     border-bottom: 3px solid;
-    border-color: #fce138;
+    border-color: var(--primary-color);
 }
 
 .intro p {
@@ -196,7 +263,7 @@ section{
 }
 
 .steps {
-    background: #fce138;
+    background: var(--primary-color);
 }
 
 .step {
@@ -257,11 +324,11 @@ section{
     width: 50%;
     font-size: 48px;
     color: #024e76;
-    border-bottom: 3px solid #fce138;
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .primary-border {
-    border-color: #fce138;
+    border-color: var(--primary-color);
 }
 
 .secondary-color {
@@ -280,7 +347,7 @@ section{
     flex: 1;
     margin: 20px;
     background: #024e76;
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 .trainer img {
@@ -318,7 +385,7 @@ section{
     font-size: 55px;
     display: inline-block;
     padding: 0 100px 20px 100px;
-    border-bottom: 3px solid #fce138;
+    border-bottom: 3px solid var(--primary-color);
     margin-bottom: 35px;
     color: #024e76
 }
@@ -328,7 +395,7 @@ section{
 }
 
 .contact h2 {
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 .contact-info{
@@ -350,7 +417,7 @@ section{
 }
 
 .contact-info h3 {
-color: #fce138;
+color: var(--primary-color);
 font-size: 32px;
 }
 
@@ -383,7 +450,7 @@ font-size: 32px;
     border-radius: 15px;
     width: 100%;
     border: none;
-    background: #fce138;
+    background:var(--primary-color);
     color: #024e76;
     text-align: center;
     padding: 15px 0;
@@ -391,7 +458,7 @@ font-size: 32px;
 }
 
 .contact-form button:hover {
-    color: #fce138;
+    color:var(--primary-color);
     background: #39a6b2;
 }
 
