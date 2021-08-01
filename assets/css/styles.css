@@ -12,7 +12,7 @@
 
 body {
     /* more on the crazy alphanumerical value in a minute! */
-    color: var(--ter)
+    color: var(--tertiary-color)
     font-family: Helvetica, Arial, sans-serif;
 }
 /*Applies 20px to every side (top, right, bottom, left) */
