@@ -12,9 +12,10 @@
 
 body {
     /* more on the crazy alphanumerical value in a minute! */
-    color: var(--tertiary-color)
+    color: var(--tertiary-color);
     font-family: Helvetica, Arial, sans-serif;
 }
+
 /*Applies 20px to every side (top, right, bottom, left) */
 header {
     z-index: 9999;
@@ -104,7 +105,7 @@ footer a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-image: url("C:/Users/bradf/Desktop/projects/run-buddy/assets/images/hero-bg.jpg");
+    background-image: url("../images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     }
